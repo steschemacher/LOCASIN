@@ -5,7 +5,7 @@ The coding was done in MATLAB R2018b.
 The analysis includes the determination of the optimal dam axis orientation, the dam geometry, the basin area and the basin volume. <br>
 A short communication article about *LOCASIN* was submitted to Environmental Modelling and Software.
 
-## (1) Program Structure
+## Program Structure
 
 [LOCASIN.m](./code/LOCASIN.m)<br>
 LOCation detection of retention and detention bASINs
@@ -63,7 +63,7 @@ LOCation detection of retention and detention bASINs
 <br>
 
 
-## (2) Additional Files
+## Additional Files
 
 1.  [LOCASIN_plotting.m](./code/LOCASIN_plotting.m):<br>
       separate plotting of the figures form already calculated \*.mat-results
@@ -81,7 +81,7 @@ LOCation detection of retention and detention bASINs
 
 <br>
 
-## (3) Standalone Application
+## Standalone Application
 
 1. [Installer](./standalone_application/installer)
     * Installer_web.exe: <br>
@@ -100,7 +100,7 @@ LOCation detection of retention and detention bASINs
 <br>
 
 
-## (4) Testcase
+## Testcase
 
 1. [Information](./testcase):<br>
     * [user_input.xlsx](./testcase/user_input.xlsx):<br>
@@ -112,3 +112,8 @@ LOCation detection of retention and detention bASINs
 3. [Results](./testcase/results):<br>
    results of LOCASIN / LOCASINplotting for the testcase
 
+<br>
+
+## Contributors
+<img align="left" src="https://github.com/steschemacher/LOCASIN/blob/master/standalone_application/installer/TUM_Logo.png" width="128">
+</br><p>Chair of Hydrology and River Basin Management</br>Technical University of Munich </p>
