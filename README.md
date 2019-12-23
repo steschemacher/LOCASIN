@@ -65,7 +65,7 @@ LOCation detection of retention and detention bASINs
 ## (2) Additional Files
 
 1.  [LOCASIN_plotting.m](./code/LOCASIN_plotting.m):<br>
-      separate plotting of the figures form already calculated *.mat-results
+      separate plotting of the figures form already calculated \*.mat-results
     *  [define_input_directory_and_file_plotting.txt](./code/define_input_directory_and_file_plotting.txt):<br>
          definition of the directory where the excel-user-input is located and name of the excel-file
 2.  [fun_replace1string.m](./code/fun_replace1string.m):<br>
@@ -98,12 +98,13 @@ LOCation detection of retention and detention bASINs
 
 <br>
 
+
 ## (4) Testcase
 
 1. [Information](./testcase):<br>
-    * [user_input.xlsx](./testcase/user_input.xlsx):<br>
+    *  [user_input.xlsx](./testcase/user_input.xlsx):<br>
       Excel-file which includes all required user input
-    * [logfile.txt](./standalone_application/logfile.txt) / [logfile_plotting.txt](./standalone_application/logfile_plotting.txt): <br>
+    *  [logfile.txt](./standalone_application/logfile.txt) / [logfile_plotting.txt](./standalone_application/logfile_plotting.txt): <br>
       log files which are created during the execution of LOCASIN / LOCASINplotting
 2. [Input Data](./testcase/data):<br>
    required input data ascii raster files for the execution of LOCASIN
