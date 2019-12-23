@@ -1,0 +1,7 @@
+Preprocessing completed: 0.189 min
+Dam analysis completed: 0.087 min
+Basin analysis completed: 0.403 min
+Basin combination selected: 0.001 min
+Results saved: 0.033 min
+Figures saved: 0.285 min
+Total duration: 1.185 min

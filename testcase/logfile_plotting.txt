@@ -1,0 +1,5 @@
+Parameter setting completed: 0.130 min
+Data import completed: 0.008 min
+Output saved: 0.000 min
+Figures saved: 0.228 min
+Total duration: 0.457 min
