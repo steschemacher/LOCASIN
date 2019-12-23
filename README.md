@@ -10,13 +10,13 @@ The analysis includes the determination of the optimal dam axis orientation, the
 LOCation detection of retention and detention bASINs
 
 1.  Preprocessing
-    *  [define_input_directory_and_file.txt](./code/define_input_directory_and_file.txt):<br>
+    * [define_input_directory_and_file.txt](./code/define_input_directory_and_file.txt):<br>
          definition of the directory where the excel-user-input is located and name of the excel-file
     *  [USER_INPUT.m](./code/USER_INPUT.m) / [USER_INPUT_from_xlsx.m](./code/USER_INPUT_from_xlsx.m):<br>
          summary of all user inputs which are required for the determination of basin locations
     *  [fun_1_river_analysis.m](./code/fun_1_river_analysis.m):<br>
          function to analyze and characterize river points
-        *  [fun_1n1_ASCIimport.m](./code/fun_1n1_ASCIimport.m):<br>
+       *  [fun_1n1_ASCIimport.m](./code/fun_1n1_ASCIimport.m):<br>
             import ASCII raster data into matlab including the coordinates of the reference system and the size information
 2.  Analysis of the Dam Positioning
     *  [fun_2_determine_shortest_dam.m](./code/fun_2_determine_shortest_dam.m):<br>
@@ -38,17 +38,17 @@ LOCation detection of retention and detention bASINs
 5.  Postprocessing
     *  [fun_9_summary_and_save_output.m](./code/fun_9_summary_and_save_output.m):<br>
          function to fummary the output and to save the results based on the user definitions (selected detail of the output)
-        *  [fun_9n1_save_basins_as_ascii.m](./code/fun_9n1_save_basins_as_ascii.m):<br>
+       *  [fun_9n1_save_basins_as_ascii.m](./code/fun_9n1_save_basins_as_ascii.m):<br>
             function to save the basin characteristics as ascii raster file which can be imported to GIS programs (dam heigths are defined positive, while water depths are defined negative)
-        *  [fun_9n2_save_basins_characteristics_as_xlsx.m](./code/fun_9n2_save_basins_characteristics_as_xlsx.m):<br>
+       *  [fun_9n2_save_basins_characteristics_as_xlsx.m](./code/fun_9n2_save_basins_characteristics_as_xlsx.m):<br>
             function to save curves (depth-storage-area) of the basins in an excel-file
     *  [fun_10_plot_results.m](./code/fun_10_plot_results.m):<br>
          function to plot the results based on predefined standard plots for the visual representation of the most important results
-        *  [plot_1_spatial_exit_codes.m](./code/plot_1_spatial_exit_codes.m):<br>
+       *  [plot_1_spatial_exit_codes.m](./code/plot_1_spatial_exit_codes.m):<br>
             plot to analyze the procedure of the river analysis and basin selection
-        *  [plot_2_spatial_all_basins.m](./code/plot_2_spatial_all_basins.m):<br>
+       *  [plot_2_spatial_all_basins.m](./code/plot_2_spatial_all_basins.m):<br>
             plot show the locations of the dams and basins of the selected basin combination including dam heights and water depths
-        *  [plot_3_single_basin_characteristics.m](./code/plot_3_single_basin_characteristics.m):<br>
+       *  [plot_3_single_basin_characteristics.m](./code/plot_3_single_basin_characteristics.m):<br>
             fact sheet, page 1: plot of the dam and basin characteristics for the best dam height
             *  [plot_3n1_spatial_basin.m](./code/plot_3n1_spatial_basin.m):<br>
                function to plot one or more dams and basins in a top view including background maßs and elevation lines
@@ -83,17 +83,17 @@ LOCation detection of retention and detention bASINs
 ## (3) Standalone Application
 
 1. [Installer](./standalone_application/installer)
-    *  Installer_web.exe: <br>
+    * Installer_web.exe: <br>
          installer for the MATLAB version for standalone applications (data is downloaded form the web)
 2. [LOCASIN](./standalone_application/LOCASIN)
-    *  LOCASIN.exe:<br>
+    * LOCASIN.exe:<br>
          standalone application of LOCASIN
-    *  [define_input_directory_and_file.txt](./code/define_input_directory_and_file.txt):<br>
+    * [define_input_directory_and_file.txt](./code/define_input_directory_and_file.txt):<br>
          definition of the directory where the excel-user-input is located and name of the excel-file
 3. [LOCASINplotting](./standalone_application/LOCASINplotting)
-    *  LOCASINplotting.exe:<br>
+    * LOCASINplotting.exe:<br>
          standalone application of LOCASINplotting
-    *  [define_input_directory_and_file.txt](./code/define_input_directory_and_file_plotting.txt):<br>
+    * [define_input_directory_and_file.txt](./code/define_input_directory_and_file_plotting.txt):<br>
          definition of the directory where the excel-user-input is located and name of the excel-file
 
 <br>
@@ -102,9 +102,9 @@ LOCation detection of retention and detention bASINs
 ## (4) Testcase
 
 1. [Information](./testcase):<br>
-    *  [user_input.xlsx](./testcase/user_input.xlsx):<br>
+    * [user_input.xlsx](./testcase/user_input.xlsx):<br>
       Excel-file which includes all required user input
-    *  [logfile.txt](./standalone_application/logfile.txt) / [logfile_plotting.txt](./standalone_application/logfile_plotting.txt): <br>
+    * [logfile.txt](./standalone_application/logfile.txt) / [logfile_plotting.txt](./standalone_application/logfile_plotting.txt): <br>
       log files which are created during the execution of LOCASIN / LOCASINplotting
 2. [Input Data](./testcase/data):<br>
    required input data ascii raster files for the execution of LOCASIN
