@@ -100,9 +100,13 @@ LOCation detection of retention and detention bASINs
 
 ## (4) Testcase
 
-1. User Information
-
-2. Input Data
-
-3. Results
+1. [Information](./testcase):<br>
+    * [user_input.xlsx](./testcase/user_input.xlsx):<br>
+      Excel-file which includes all required user input
+    * [logfile.txt](./standalone_application/logfile.txt) / [logfile_plotting.txt](./standalone_application/logfile_plotting.txt): <br>
+      log files which are created during the execution of LOCASIN / LOCASINplotting
+2. [Input Data](./testcase/data):<br>
+   required input data ascii raster files for the execution of LOCASIN
+3. [Results](./testcase/results):<br>
+   results of LOCASIN / LOCASINplotting for the testcase
 
