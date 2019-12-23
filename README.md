@@ -56,7 +56,6 @@ The analysis includes the determination of the optimal dam axis orientation, the
 ## (3) Standalone Application
 
 1. [Installer](./standalone_applocation/installer)
-    *  Installer_mrc.exe
     *  Installer_web.exe
 2. LOCASIN
 3. LOCASINplotting
