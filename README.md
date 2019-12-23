@@ -82,15 +82,15 @@ LOCation detection of retention and detention bASINs
 
 ## (3) Standalone Application
 
-1. [Installer](./standalone_applocation/installer)
+1. [Installer](./standalone_application/installer)
     *  Installer_web.exe: <br>
          installer for the MATLAB version for standalone applications (data is downloaded form the web)
-2. [LOCASIN](./standalone_applocation/LOCASIN)
+2. [LOCASIN](./standalone_application/LOCASIN)
     *  LOCASIN.exe:<br>
          standalone application of LOCASIN
     *  [define_input_directory_and_file.txt](./code/define_input_directory_and_file.txt):<br>
          definition of the directory where the excel-user-input is located and name of the excel-file
-3. [LOCASINplotting](./standalone_applocation/LOCASINplotting)
+3. [LOCASINplotting](./standalone_application/LOCASINplotting)
     *  LOCASINplotting.exe:<br>
          standalone application of LOCASINplotting
     *  [define_input_directory_and_file.txt](./code/define_input_directory_and_file_plotting.txt):<br>
@@ -99,4 +99,10 @@ LOCation detection of retention and detention bASINs
 <br>
 
 ## (4) Testcase
+
+1. User Information
+
+2. Input Data
+
+3. Results
 
