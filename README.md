@@ -3,6 +3,7 @@
 The open-source tool *LOCASIN* enables an automated and rapid detection, characterization and evaluation of basin locations. 
 The coding was done in MATLAB R2018b. 
 The analysis includes the determination of the optimal dam axis orientation, the dam geometry, the basin area and the basin volume. <br>
+An article about *LOCASIN* was published in Water: https://www.mdpi.com/2073-4441/12/5/1491.<br>
 
 ## Program Structure
 
