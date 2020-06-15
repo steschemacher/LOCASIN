@@ -36,12 +36,18 @@ read_from_xlsx = 1;
 global river_points  river_points_all save_memory basins_selected dam_points
 
 
-try
+if read_from_xlsx==1
     info_input = textread('define_input_directory_and_file.txt','%s');
     name_directory = info_input{1};
-    cd(name_directory)
-    diary('logfile.txt')
-    
+    try
+        cd(name_directory)
+    catch
+        error(sprintf('The defined input directory is not existing:\n %s',name_directory))
+    end
+end
+diary('logfile.txt')
+
+try
     %-- define status figure ---------------------------------------------%
     logo = imread('locasin.jpg');
     overview = figure('name','status','NumberTitle','off','visible','off');
@@ -59,9 +65,11 @@ try
     %% PREPROCESSING
     
     %-- update status figure ---------------------------------------------%
-    set(0,'CurrentFigure',overview)
-    annotation('textbox',[.1,.45,.5,.05],'String','analyzing river network...','linestyle','none','fontsize',overview_fontsize)
-    pause(1)
+    if ishandle(overview)==1
+        set(0,'CurrentFigure',overview)
+        annotation('textbox',[.1,.45,.5,.05],'String','analyzing river network...','linestyle','none','fontsize',overview_fontsize)
+        pause(1)
+    end
     %-- calculate duration -----------------------------------------------%
     time_start_total = now();
     %---------------------------------------------------------------------%
@@ -103,9 +111,11 @@ try
     duration = (time_end-time_start_total)*24*60;
     fprintf('Preprocessing completed: %3.3f min\n',duration);
     %-- update status figure ---------------------------------------------%
-    set(0,'CurrentFigure',overview)
-    annotation('textbox',[.4,.45,.5,.05],'String',sprintf('finished: %7.3f min',duration),'linestyle','none','fontsize',overview_fontsize)
-    pause(1)
+    if ishandle(overview)==1
+        set(0,'CurrentFigure',overview)
+        annotation('textbox',[.4,.45,.5,.05],'String',sprintf('finished: %7.3f min',duration),'linestyle','none','fontsize',overview_fontsize)
+        pause(1)
+    end
     %---------------------------------------------------------------------%
     
     
@@ -113,9 +123,11 @@ try
     %% DAM ANALYSIS
     
     %-- update status figure ---------------------------------------------%
-    set(0,'CurrentFigure',overview)
-    annotation('textbox',[.1,.4,.5,.05],'String','analyzing dam orientations...','linestyle','none','fontsize',overview_fontsize)
-    pause(1)
+    if ishandle(overview)==1
+        set(0,'CurrentFigure',overview)
+        annotation('textbox',[.1,.4,.5,.05],'String','analyzing dam orientations...','linestyle','none','fontsize',overview_fontsize)
+        pause(1)
+    end
     %-- calculate duration -----------------------------------------------%
     time_start = now();
     %---------------------------------------------------------------------%
@@ -150,18 +162,22 @@ try
     duration = (time_end-time_start)*24*60;
     fprintf('Dam analysis completed: %3.3f min\n',duration);
     %-- update status figure ---------------------------------------------%
-    set(0,'CurrentFigure',overview)
-    annotation('textbox',[.4,.4,.5,.05],'String',sprintf('finished: %7.3f min',duration),'linestyle','none','fontsize',overview_fontsize)
-    pause(1)
+    if ishandle(overview)==1
+        set(0,'CurrentFigure',overview)
+        annotation('textbox',[.4,.4,.5,.05],'String',sprintf('finished: %7.3f min',duration),'linestyle','none','fontsize',overview_fontsize)
+        pause(1)
+    end
     %---------------------------------------------------------------------%
     
     
     %% BASIN ANALYSIS
     
     %-- update status figure ---------------------------------------------%
-    set(0,'CurrentFigure',overview)
-    annotation('textbox',[.1,.35,.5,.05],'String','analyzing basin locations...','linestyle','none','fontsize',overview_fontsize)
-    pause(1)
+    if ishandle(overview)==1
+        set(0,'CurrentFigure',overview)
+        annotation('textbox',[.1,.35,.5,.05],'String','analyzing basin locations...','linestyle','none','fontsize',overview_fontsize)
+        pause(1)
+    end
     %-- calculate duration -----------------------------------------------%
     time_start = now();
     %---------------------------------------------------------------------%
@@ -257,18 +273,22 @@ try
     duration = (time_end-time_start)*24*60;
     fprintf('Basin analysis completed: %3.3f min\n',duration);
     %-- update status figure ---------------------------------------------%
-    set(0,'CurrentFigure',overview)
-    annotation('textbox',[.4,.35,.5,.05],'String',sprintf('finished: %7.3f min',duration),'linestyle','none','fontsize',overview_fontsize)
-    pause(1)
+    if ishandle(overview)==1
+        set(0,'CurrentFigure',overview)
+        annotation('textbox',[.4,.35,.5,.05],'String',sprintf('finished: %7.3f min',duration),'linestyle','none','fontsize',overview_fontsize)
+        pause(1)
+    end
     %---------------------------------------------------------------------%
     
     
     %% BASIN COMBINATION
     
     %-- update status figure ---------------------------------------------%
-    set(0,'CurrentFigure',overview)
-    annotation('textbox',[.1,.3,.5,.05],'String','selecting basin combination...','linestyle','none','fontsize',overview_fontsize)
-    pause(1)
+    if ishandle(overview)==1
+        set(0,'CurrentFigure',overview)
+        annotation('textbox',[.1,.3,.5,.05],'String','selecting basin combination...','linestyle','none','fontsize',overview_fontsize)
+        pause(1)
+    end
     %-- calculate duration -----------------------------------------------%
     time_start = now();
     %---------------------------------------------------------------------%
@@ -319,9 +339,11 @@ try
     duration = (time_end-time_start)*24*60;
     fprintf('Basin combination selected: %3.3f min\n',duration);
     %-- update status figure ---------------------------------------------%
-    set(0,'CurrentFigure',overview)
-    annotation('textbox',[.4,.3,.5,.05],'String',sprintf('finished: %7.3f min',duration),'linestyle','none','fontsize',overview_fontsize)
-    pause(1)
+    if ishandle(overview)==1
+        set(0,'CurrentFigure',overview)
+        annotation('textbox',[.4,.3,.5,.05],'String',sprintf('finished: %7.3f min',duration),'linestyle','none','fontsize',overview_fontsize)
+        pause(1)
+    end
     %---------------------------------------------------------------------%
     
     
@@ -332,9 +354,11 @@ try
     %#####################################################################%
     
     %-- update status figure ---------------------------------------------%
-    set(0,'CurrentFigure',overview)
-    annotation('textbox',[.1,.25,.5,.05],'String','saving results...','linestyle','none','fontsize',overview_fontsize)
-    pause(1)
+    if ishandle(overview)==1
+        set(0,'CurrentFigure',overview)
+        annotation('textbox',[.1,.25,.5,.05],'String','saving results...','linestyle','none','fontsize',overview_fontsize)
+        pause(1)
+    end
     %-- calculate duration -----------------------------------------------%
     time_start = now();
     %---------------------------------------------------------------------%
@@ -349,9 +373,11 @@ try
     duration = (time_end-time_start)*24*60;
     fprintf('Results saved: %3.3f min\n',duration);
     %-- update status figure ---------------------------------------------%
-    set(0,'CurrentFigure',overview)
-    annotation('textbox',[.4,.25,.5,.05],'String',sprintf('finished: %7.3f min',duration),'linestyle','none','fontsize',overview_fontsize)
-    pause(1)
+    if ishandle(overview)==1
+        set(0,'CurrentFigure',overview)
+        annotation('textbox',[.4,.25,.5,.05],'String',sprintf('finished: %7.3f min',duration),'linestyle','none','fontsize',overview_fontsize)
+        pause(1)
+    end
     %---------------------------------------------------------------------%
     
     
@@ -360,9 +386,11 @@ try
     %#####################################################################%
     
     %-- update status figure ---------------------------------------------%
-    set(0,'CurrentFigure',overview)
-    annotation('textbox',[.1,.2,.5,.05],'String','plotting results...','linestyle','none','fontsize',overview_fontsize)
-    pause(1)
+    if ishandle(overview)==1
+        set(0,'CurrentFigure',overview)
+        annotation('textbox',[.1,.2,.5,.05],'String','plotting results...','linestyle','none','fontsize',overview_fontsize)
+        pause(1)
+    end
     %-- calculate duration -----------------------------------------------%
     time_start = now();
     %---------------------------------------------------------------------%
@@ -379,17 +407,21 @@ try
     fprintf('Figures saved: %3.3f min\n',duration);
     fprintf('Total duration: %3.3f min\n',duration_total);
     %-- update status figure ---------------------------------------------%
-    set(0,'CurrentFigure',overview)
-    annotation('textbox',[.4,.2,.5,.05],'String',sprintf('finished: %7.3f min',duration),'linestyle','none','fontsize',overview_fontsize)
-    pause(1)
-    annotation('textbox',[.45,.12,.5,.05],'String',sprintf('Total duration: %7.3f min\n',duration_total),'linestyle','none','fontsize',overview_fontsize)
+    if ishandle(overview)==1
+        set(0,'CurrentFigure',overview)
+        annotation('textbox',[.4,.2,.5,.05],'String',sprintf('finished: %7.3f min',duration),'linestyle','none','fontsize',overview_fontsize)
+        pause(1)
+        annotation('textbox',[.45,.12,.5,.05],'String',sprintf('Total duration: %7.3f min\n',duration_total),'linestyle','none','fontsize',overview_fontsize)
+    end
     %---------------------------------------------------------------------%
     diary off
     
 catch ME
     %-- update status figure ---------------------------------------------%
-    set(0,'CurrentFigure',overview)
-    annotation('textbox',[.45,.12,.4,.05],'String','ERROR. Read logfile for more details.','linestyle','none','fontsize',overview_fontsize)
+    if ishandle(overview)==1
+        set(0,'CurrentFigure',overview)
+        annotation('textbox',[.45,.12,.4,.05],'String','ERROR. Read logfile for more details.','linestyle','none','fontsize',overview_fontsize)
+    end
     %---------------------------------------------------------------------%
     
     rethrow(ME)
