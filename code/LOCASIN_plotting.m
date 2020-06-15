@@ -11,12 +11,18 @@ close all
 global path_result
 read_from_xlsx = 1;
 
-try
+if read_from_xlsx==1
     info_input = textread('define_input_directory_and_file_plotting.txt','%s');
     name_directory = info_input{1};
-    cd(name_directory)
-    diary('logfile_plotting.txt')
-    
+    try
+        cd(name_directory)
+    catch
+        error(sprintf('The defined input directory is not existing:\n %s',name_directory))
+    end
+end
+diary('logfile_plotting.txt')
+
+try    
     %-- define status figure ---------------------------------------------%
     logo = imread('locasin_plotting.jpg');
     overview = figure('name','status','NumberTitle','off','visible','off');
@@ -35,9 +41,11 @@ try
     %% define directory
     
     %-- update status figure ---------------------------------------------%
-    set(0,'CurrentFigure',overview)
-    annotation('textbox',[.1,.35,.5,.05],'String','loading parameters...','linestyle','none','fontsize',overview_fontsize)
-    pause(1)
+    if ishandle(overview)==1
+        set(0,'CurrentFigure',overview)
+        annotation('textbox',[.1,.35,.5,.05],'String','loading parameters...','linestyle','none','fontsize',overview_fontsize)
+        pause(1)
+    end
     %-- calculate duration -----------------------------------------------%
     time_start_total = now();
     %---------------------------------------------------------------------%
@@ -119,18 +127,22 @@ try
     duration = (time_end-time_start_total)*24*60;
     fprintf('Parameter setting completed: %3.3f min\n',duration);
     %-- update status figure ---------------------------------------------%
-    set(0,'CurrentFigure',overview)
-    annotation('textbox',[.4,.35,.5,.05],'String',sprintf('finished: %3.3f min',duration),'linestyle','none','fontsize',overview_fontsize)
-    pause(1)
+    if ishandle(overview)==1
+        set(0,'CurrentFigure',overview)
+        annotation('textbox',[.4,.35,.5,.05],'String',sprintf('finished: %3.3f min',duration),'linestyle','none','fontsize',overview_fontsize)
+        pause(1)
+    end
     %---------------------------------------------------------------------%
     
     
     %% load data
     
     %-- update status figure ---------------------------------------------%
-    set(0,'CurrentFigure',overview)
-    annotation('textbox',[.1,.3,.5,.05],'String','loading data...','linestyle','none','fontsize',overview_fontsize)
-    pause(1)
+    if ishandle(overview)==1
+        set(0,'CurrentFigure',overview)
+        annotation('textbox',[.1,.3,.5,.05],'String','loading data...','linestyle','none','fontsize',overview_fontsize)
+        pause(1)
+    end
     %-- calculate duration -----------------------------------------------%
     time_start = now();
     %---------------------------------------------------------------------%
@@ -147,18 +159,22 @@ try
     duration = (time_end-time_start)*24*60;
     fprintf('Data import completed: %3.3f min\n',duration);
     %-- update status figure ---------------------------------------------%
-    set(0,'CurrentFigure',overview)
-    annotation('textbox',[.4,.3,.5,.05],'String',sprintf('finished: %3.3f min',duration),'linestyle','none','fontsize',overview_fontsize)
-    pause(1)
+    if ishandle(overview)==1
+        set(0,'CurrentFigure',overview)
+        annotation('textbox',[.4,.3,.5,.05],'String',sprintf('finished: %3.3f min',duration),'linestyle','none','fontsize',overview_fontsize)
+        pause(1)
+    end
     %---------------------------------------------------------------------%
  
     
     %% export requested results
     
     %-- update status figure ---------------------------------------------%
-    set(0,'CurrentFigure',overview)
-    annotation('textbox',[.1,.25,.5,.05],'String','export results...','linestyle','none','fontsize',overview_fontsize)
-    pause(1)
+    if ishandle(overview)==1
+        set(0,'CurrentFigure',overview)
+        annotation('textbox',[.1,.25,.5,.05],'String','export results...','linestyle','none','fontsize',overview_fontsize)
+        pause(1)
+    end
     %-- calculate duration -----------------------------------------------%
     time_start = now();
     %---------------------------------------------------------------------%
@@ -173,17 +189,21 @@ try
     duration = (time_end-time_start)*24*60;
     fprintf('Output saved: %3.3f min\n',duration);
     %-- update status figure ---------------------------------------------%
-    set(0,'CurrentFigure',overview)
-    annotation('textbox',[.4,.25,.5,.05],'String',sprintf('finished: %3.3f min',duration),'linestyle','none','fontsize',overview_fontsize)
+    if ishandle(overview)==1
+        set(0,'CurrentFigure',overview)
+        annotation('textbox',[.4,.25,.5,.05],'String',sprintf('finished: %3.3f min',duration),'linestyle','none','fontsize',overview_fontsize)
+    end
     %---------------------------------------------------------------------%
     
     
     %% plot requested figures
     
     %-- update status figure ---------------------------------------------%
-    set(0,'CurrentFigure',overview)
-    annotation('textbox',[.1,.2,.5,.05],'String','plotting results...','linestyle','none','fontsize',overview_fontsize)
-    pause(1)
+    if ishandle(overview)==1
+        set(0,'CurrentFigure',overview)
+        annotation('textbox',[.1,.2,.5,.05],'String','plotting results...','linestyle','none','fontsize',overview_fontsize)
+        pause(1)
+    end
     %-- calculate duration -----------------------------------------------%
     time_start = now();
     %---------------------------------------------------------------------%
@@ -200,10 +220,12 @@ try
     fprintf('Figures saved: %3.3f min\n',duration);
     fprintf('Total duration: %3.3f min\n',duration_total);
     %-- update status figure ---------------------------------------------%
-    set(0,'CurrentFigure',overview)
-    annotation('textbox',[.4,.2,.5,.05],'String',sprintf('finished: %3.3f min',duration),'linestyle','none','fontsize',overview_fontsize)
-    pause(1)
-    annotation('textbox',[.45,.12,.5,.05],'String',sprintf('Total duration: %3.3f min\n',duration_total),'linestyle','none','fontsize',overview_fontsize)
+    if ishandle(overview)==1
+        set(0,'CurrentFigure',overview)
+        annotation('textbox',[.4,.2,.5,.05],'String',sprintf('finished: %3.3f min',duration),'linestyle','none','fontsize',overview_fontsize)
+        pause(1)
+        annotation('textbox',[.45,.12,.5,.05],'String',sprintf('Total duration: %3.3f min\n',duration_total),'linestyle','none','fontsize',overview_fontsize)
+    end
     %---------------------------------------------------------------------%
     
     diary off
@@ -211,8 +233,10 @@ try
 catch ME
     
     %-- update status figure ---------------------------------------------%
-    set(0,'CurrentFigure',overview)
-    annotation('textbox',[.45,.12,.4,.05],'String','ERROR. Read logfile for more details.','linestyle','none','fontsize',overview_fontsize)
+    if ishandle(overview)==1
+        set(0,'CurrentFigure',overview)
+        annotation('textbox',[.45,.12,.4,.05],'String','ERROR. Read logfile for more details.','linestyle','none','fontsize',overview_fontsize)
+    end
     %---------------------------------------------------------------------%
     
     rethrow(ME)
