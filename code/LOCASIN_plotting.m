@@ -5,7 +5,7 @@
 %
 % Author: Sonja Teschemacher
 % email: sonja.teschemacher@tum.de
-% December 2019; Last revision: 22-Dez-2019
+% December 2019; Last revision: 15-Jun-2020
 
 close all
 global path_result
